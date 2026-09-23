@@ -177,7 +177,7 @@ def plot_ball():
     while f1.x[2,0] > 0:
         t += dt
         x,y = ball.update(dt)
-        z = np.mat([[x,y]]).T
+        z = np.array([[x, y]], dtype=float).T
 
         f1.update(z)
         f2.update(z)

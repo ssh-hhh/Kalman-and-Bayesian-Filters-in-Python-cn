@@ -152,7 +152,7 @@ def plot_ukf_vs_mc(alpha=0.001, beta=3., kappa=1.):
     ### pass through unscented transform
     ukf_mean, ukf_cov = unscented_transform(sigmas_f, Wm, Wc)
     ukf_mean = ukf_mean[0]
-    ukf_std = math.sqrt(ukf_cov[0])
+    ukf_std = math.sqrt(ukf_cov[0, 0])
 
     norm = scipy.stats.norm(ukf_mean, ukf_std)
     xs = np.linspace(-3, 5, 200)
